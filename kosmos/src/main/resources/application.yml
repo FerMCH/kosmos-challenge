@@ -1,0 +1,23 @@
+logging:
+  level:
+    root: ${LOG_LEVEL}
+
+routes:
+  hospital: ${HOSPITAL_URL}
+
+spring:
+  jpa:
+    generate-ddl: true
+    properties:
+      hibernate:
+        ddl-auto: ${SQL_DLL}
+        transaction:
+            jta:
+                platform: org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform
+    database: POSTGRESQL
+    show-sql: true
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driverClassName: org.postgresql.Driver
